@@ -1,0 +1,22 @@
+nav {
+    height: 80px;
+    box-shadow: 1px 3px 1px #F4F5F6;
+    padding: 0 30px ;
+   display: flex;
+   display: -webkit-flex;  align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+nav .logo-warp {
+    width: 15%;
+}
+nav .logo-warp img {
+    width: 100%;
+}
+nav .search{
+    margin-left: 150px;
+    width: 35%;
+}
+nav .menu{
+    margin-left: 15%;
+}
