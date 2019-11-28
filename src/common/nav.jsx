@@ -1,21 +1,13 @@
 import React, { Component } from 'react'
-import { Input, Menu, Icon } from 'antd';
+import { Input } from 'antd';
+import {connect} from 'react-redux'
+import NoLogin from './child/NoLogin'
+import {Already,NotLoggedIn} from '../store/actionList'
 import './nav.css'
 const { Search } = Input;
-const { SubMenu } = Menu;
 
-export default class Nav extends Component {
-    state = {
-        current: 'mail',
-    };
-
-    handleClick = e => {
-        console.log('click ', e);
-        this.setState({
-            current: e.key,
-        });
-    };
-
+ class Nav extends Component {
+   
     render() {
         return (
             <div>
@@ -27,22 +19,19 @@ export default class Nav extends Component {
                         <Search size="large" placeholder="搜索帖子" onSearch={value => console.log(value)}  enterButton />
                     </div>
                     <div className="menu">
-                        <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-                            <Menu.Item key="mail">
-                            <Icon type="login" />
-                                登录
-                            </Menu.Item>
-                           
-                          
-                            <Menu.Item key="register">
-                            <Icon type="user-add" />
-                              注册
-                            </Menu.Item>
-                        </Menu>
+                        <NoLogin/>
                     </div>
+                   
                 </nav>
 
             </div>
         )
     }
 }
+const MapStateToPorps =(state)=> {
+    return {
+        state
+    }
+}
+const actionCreators = {Already,NotLoggedIn}
+export default connect(MapStateToPorps,actionCreators)(Nav)
