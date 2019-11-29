@@ -6,6 +6,7 @@ import {Already,NotLoggedIn} from '../store/actionList'
 import './nav.css'
 const { Search } = Input;
 
+
  class Nav extends Component {
    
     render() {
@@ -21,7 +22,7 @@ const { Search } = Input;
                     <div className="menu">
                         <NoLogin/>
                     </div>
-                   
+                  
                 </nav>
 
             </div>

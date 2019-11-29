@@ -1,5 +1,9 @@
 let  state = {
     // 登录状态
-    isLogin:true
+    isLogin:false,
+    user:{
+        name:'',
+        password:''
+    }
 }
 export default state

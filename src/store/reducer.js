@@ -1,4 +1,4 @@
-import {Already,NotLoggedIn} from './actionList'
+import {Already,NotLoggedIn,loginFunc} from './actionList'
 import states from './state'
 var reducer = (state = states, action) => {
     console.log(state)
@@ -11,6 +11,11 @@ var reducer = (state = states, action) => {
             return {
                 ...state,isLogin:false
             }
+        case loginFunc:
+            console.log(action.data)
+                return{
+                    ...state
+                }
         default:
             return {
                 ...state
